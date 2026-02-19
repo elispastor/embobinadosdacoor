@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:image" content="DACOOR-WEB/portada.png">
+  <meta property="og:image" content="portada.png">
   <title>DACOOR · Reparaciones y Embobinados</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -37,10 +37,9 @@
     }
     
     .hero-imagen {
-      min-height: 350px;
-      background: linear-gradient(rgba(26,75,140,0.7), rgba(26,75,140,0.5)), url('DACOOR-WEB/portada.png');
+      min-height: 400px;
+      background-image: url('portada.png');
       background-size: cover; background-position: center;
-      display: flex; align-items: center; justify-content: center;
     }
     
     .hero-content { padding: 2.5rem; }
@@ -62,29 +61,21 @@
     .seccion-titulo { font-size: 2.2rem; color: var(--azul); text-align: center; margin-bottom: 2rem; }
     .seccion-titulo::after { content: ""; display: block; width: 80px; height: 3px; background: var(--cobre); margin: 0.5rem auto; }
     
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    /* SECCIÓN ESPECIAL EMBOBINADO (PARAÍSO) */
+    .embobinado-especial {
+      background: linear-gradient(135deg, var(--azul), #0f3a6b);
+      color: white; padding: 3rem; border-radius: 40px; margin: 3rem 0;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .embobinado-especial img {
+      width: 100%; border-radius: 30px; border: 5px solid var(--cobre); box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+    }
+    .embobinado-texto h3 { font-size: 2.5rem; color: var(--cobre); margin-bottom: 1.5rem; }
+    .embobinado-texto p { font-size: 1.2rem; margin-bottom: 1rem; }
+    .embobinado-texto ul { list-style: none; }
+    .embobinado-texto li { margin: 1rem 0; font-size: 1.1rem; padding-left: 2rem; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23b87333"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') left center no-repeat; }
     
-    .card {
-      background: white; padding: 1.8rem; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      border-bottom: 4px solid var(--cobre);
-    }
-    .card h3 { color: var(--azul); font-size: 1.6rem; margin-bottom: 1rem; }
-    .servicio-icono { font-size: 2.5rem; margin-bottom: 1rem; }
-    
-    /* SECCIÓN DE MARCAS */
-    .marcas-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 2rem;
-    }
-    .marca-item {
-      background: white; padding: 1.5rem; border-radius: 15px; text-align: center;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1); border: 2px solid var(--cobre);
-    }
-    .marca-item img {
-      max-width: 100%; height: auto; max-height: 80px;
-    }
-    
-    /* HERRAMIENTAS EN SERVICIOS */
+    /* SERVICIOS CON HERRAMIENTAS */
     .servicios-con-imagen {
       display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
     }
@@ -93,8 +84,24 @@
       width: 100%; border-radius: 20px; border: 4px solid var(--cobre);
     }
     
-    .redes-box { background: white; padding: 2rem; border-radius: 30px; text-align: center; border: 3px solid var(--cobre); }
-    .redes-handle { background: var(--fondo); padding: 1rem 2rem; border-radius: 60px; display: inline-block; font-size: 1.6rem; font-weight: bold; color: var(--cobre); border: 2px dashed var(--azul); }
+    .card {
+      background: white; padding: 1.8rem; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-bottom: 4px solid var(--cobre);
+    }
+    .card h3 { color: var(--azul); font-size: 1.6rem; margin-bottom: 1rem; }
+    
+    /* SECCIÓN DE MARCAS (UNA SOLA IMAGEN) */
+    .marcas-unica {
+      background: white; padding: 3rem; border-radius: 40px; text-align: center;
+      border: 4px solid var(--cobre); margin: 2rem 0;
+    }
+    .marcas-unica img {
+      max-width: 100%; max-height: 300px; border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .marcas-unica p { margin-top: 2rem; font-size: 1.3rem; color: var(--azul); font-weight: bold; }
+    
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
     
     footer {
       background: var(--azul); color: white; text-align: center; padding: 2.5rem; margin-top: 3rem;
@@ -103,7 +110,7 @@
     footer .refran { font-size: 1.6rem; color: var(--cobre); margin: 1rem 0; }
     
     @media (max-width: 768px) {
-      .hero, .grid-3, .grid-2, .servicios-con-imagen, .marcas-grid { grid-template-columns: 1fr; }
+      .hero, .embobinado-especial, .servicios-con-imagen, .grid-2 { grid-template-columns: 1fr; }
       .hamburguesa { display: block; }
       .menu { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--azul); flex-direction: column; align-items: center; padding: 1rem 0; }
       .menu.mostrar { display: flex; }
@@ -119,9 +126,9 @@
     <button class="hamburguesa" id="menuBtn">☰</button>
     <ul class="menu" id="menu">
       <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#embobinado">Embobinados</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#marcas">Marcas</a></li>
-      <li><a href="#ubicacion">Ubicación</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </div>
@@ -148,6 +155,23 @@
   </section>
 </main>
 
+<!-- SECCIÓN ESPECIAL EMBOBINADO (PARAÍSO) -->
+<section id="embobinado" class="seccion">
+  <div class="embobinado-especial">
+    <img src="portada.png" alt="Embobinado DACOOR">
+    <div class="embobinado-texto">
+      <h3>⚡ Expertos en Embobinados</h3>
+      <p>Más de 15 años de experiencia en reparación y mantenimiento de motores eléctricos, transformadores y bobinas para todo tipo de maquinaria industrial y doméstica.</p>
+      <ul>
+        <li><strong>Motores monofásicos y trifásicos</strong></li>
+        <li><strong>Transformadores de potencia y control</strong></li>
+        <li><strong>Bobinas para electrodomésticos</strong></li>
+        <li><strong>Diagnóstico y presupuesto sin compromiso</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section id="servicios" class="seccion">
   <h2 class="seccion-titulo">🔧 NUESTROS SERVICIOS</h2>
   
@@ -167,27 +191,16 @@
       </div>
     </div>
     <div class="herramientas-imagen">
-      <img src="DACOOR-WEB/herramientas.jpg" alt="Herramientas de reparación">
+      <img src="herramientas.jpg" alt="Herramientas de reparación">
     </div>
   </div>
 </section>
 
 <section id="marcas" class="seccion">
   <h2 class="seccion-titulo">🏷️ TRABAJAMOS CON ESTAS MARCAS</h2>
-  <div class="marcas-grid">
-    <div class="marca-item"><img src="DACOOR-WEB/marcas.png" alt="Marcas 1"></div>
-    <div class="marca-item"><img src="DACOOR-WEB/marcas.png" alt="Marcas 2"></div>
-    <div class="marca-item"><img src="DACOOR-WEB/marcas.png" alt="Marcas 3"></div>
-    <div class="marca-item"><img src="DACOOR-WEB/marcas.png" alt="Marcas 4"></div>
-  </div>
-  <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem;">LG, Samsung, Whirlpool, Mabe, Centrales y más...</p>
-</section>
-
-<section id="ubicacion" class="seccion">
-  <h2 class="seccion-titulo">📍 UBICACIÓN</h2>
-  <div class="grid-2">
-    <div class="card"><h3>Dirección</h3><p><strong>Av. 8 N° 7-55</strong><br>Barrio El Llano, Cúcuta</p></div>
-    <div class="card"><h3>Horario</h3><p>Lun-Vie: 8am-6pm<br>Sáb: 8am-2pm</p></div>
+  <div class="marcas-unica">
+    <img src="marcas.png" alt="Marcas de electrodomésticos que reparamos">
+    <p>LG · Samsung · Whirlpool · Mabe · Centrales · Haceb · Challenger · Y más...</p>
   </div>
 </section>
 
