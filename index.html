@@ -30,7 +30,7 @@
     
     .hamburguesa { display: none; font-size: 2rem; color: white; background: none; border: none; }
     
-    /* HERO - FACHADA1 */
+    /* HERO - FACHADA1 CENTRADA Y MÁS GRANDE */
     .hero {
       max-width: 1200px; margin: 2rem auto; background: white; border-radius: 30px;
       overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 3px solid var(--cobre);
@@ -38,9 +38,9 @@
     }
     
     .hero-imagen {
-      min-height: 350px;
+      min-height: 400px;  /* Más alto */
       background-image: url('FACHADA1.jpg');
-      background-size: contain;
+      background-size: 90%;  /* Más grande, centrada */
       background-position: center;
       background-repeat: no-repeat;
       background-color: var(--fondo);
@@ -54,30 +54,41 @@
     .direccion { background: #f0f3f8; padding: 1.5rem; border-radius: 15px; margin: 1.5rem 0; }
     
     .botones-contacto { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
-    .btn-wsp, .btn-llamada {
+    .btn-wsp, .btn-llamada, .btn-tarjeta, .btn-compartir {
       padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600;
       display: inline-flex; align-items: center; gap: 0.5rem; border: 2px solid white;
     }
     .btn-wsp { background: #25D366; color: white; }
     .btn-llamada { background: var(--azul); color: white; border-color: var(--cobre); }
+    .btn-tarjeta { background: var(--cobre); color: white; border-color: white; }
+    .btn-compartir { background: #ff6b35; color: white; border-color: white; }
     
     .seccion { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; }
     .seccion-titulo { font-size: 2.2rem; color: var(--azul); text-align: center; margin-bottom: 2rem; }
     .seccion-titulo::after { content: ""; display: block; width: 80px; height: 3px; background: var(--cobre); margin: 0.5rem auto; }
     
-    /* EMBOBINADO - FACHADA2 */
+    /* EMBOBINADO - FACHADA2 CENTRADA */
     .embobinado-especial {
       background: linear-gradient(135deg, var(--azul), #0f3a6b);
       color: white; padding: 3rem; border-radius: 40px; margin: 3rem 0;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
     }
     .embobinado-especial img {
-      width: 100%; border-radius: 30px; border: 5px solid var(--cobre); box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+      width: 100%; max-width: 400px; border-radius: 30px; border: 5px solid var(--cobre); 
+      box-shadow: 0 20px 30px rgba(0,0,0,0.3); margin: 0 auto;  /* CENTRADO */
     }
+    
     .embobinado-texto h3 { font-size: 2.5rem; color: var(--cobre); margin-bottom: 1.5rem; }
     .embobinado-texto p { font-size: 1.2rem; margin-bottom: 1rem; }
     .embobinado-texto ul { list-style: none; }
     .embobinado-texto li { margin: 1rem 0; font-size: 1.1rem; padding-left: 2rem; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23b87333"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') left center no-repeat; }
+    
+    /* Misión Visión Valores */
+    .mision-vision { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .mision-vision .card { text-align: center; padding: 2rem; }
+    
+    .qr-code { text-align: center; margin: 2rem 0; }
+    .qr-code img { max-width: 200px; border: 4px solid var(--cobre); border-radius: 15px; }
     
     .servicios-con-imagen {
       display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
@@ -118,6 +129,7 @@
       .menu { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--azul); flex-direction: column; align-items: center; padding: 1rem 0; }
       .menu.mostrar { display: flex; }
       .hero-content h1 { font-size: 2.5rem; }
+      .hero-imagen { min-height: 300px; }
     }
   </style>
 </head>
@@ -130,6 +142,7 @@
     <ul class="menu" id="menu">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#embobinado">Embobinados</a></li>
+      <li><a href="#mision">Nosotros</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#marcas">Marcas</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -153,6 +166,8 @@
         <a href="https://wa.me/573212774577" class="btn-wsp" target="_blank">📱 321 277 4577</a>
         <a href="https://wa.me/573209399023" class="btn-wsp" target="_blank">📱 320 939 9023</a>
         <a href="tel:+573212774577" class="btn-llamada">📞 Llamar</a>
+        <a href="#tarjeta" class="btn-tarjeta">💳 Quiero mi Tarjeta</a>
+        <a href="#" onclick="shareSite()" class="btn-compartir">📲 Compartir</a>
       </div>
     </div>
   </section>
@@ -170,6 +185,36 @@
         <li><strong>Bobinas para electrodomésticos</strong></li>
         <li><strong>Diagnóstico sin compromiso</strong></li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section id="mision" class="seccion">
+  <h2 class="seccion-titulo">🏛️ MISIÓN · VISIÓN · VALORES</h2>
+  <div class="mision-vision">
+    <div class="card">
+      <h3>🎯 MISIÓN</h3>
+      <p>Brindar reparaciones de calidad con amor y responsabilidad, devolviendo vida a sus electrodomésticos.</p>
+    </div>
+    <div class="card">
+      <h3>🔮 VISIÓN</h3>
+      <p>Ser la referencia #1 en embobinados y reparaciones en Cúcuta y Norte de Santander.</p>
+    </div>
+    <div class="card">
+      <h3>❤️ VALORES</h3>
+      <p>Amor · Calidad · Puntualidad · Garantía · Confianza</p>
+    </div>
+  </div>
+</section>
+
+<section id="tarjeta" class="seccion">
+  <h2 class="seccion-titulo">💳 TARJETA DIGITAL DACOOR</h2>
+  <div class="qr-code">
+    <p><strong>Escanea y guarda en tu celular</strong></p>
+    <!-- AQUÍ VA TU QR cuando lo tengas -->
+    <div style="background: #f0f0f0; padding: 2rem; border-radius: 20px; margin: 1rem 0;">
+      <p>📱 QR Listo para WhatsApp</p>
+      <a href="https://wa.me/573212774577?text=Quiero%20mi%20tarjeta%20digital%20DACOOR" class="btn-wsp" style="display: block; max-width: 300px; margin: 1rem auto;">Generar QR</a>
     </div>
   </div>
 </section>
@@ -223,6 +268,18 @@
   document.getElementById('menuBtn').addEventListener('click', () => {
     document.getElementById('menu').classList.toggle('mostrar');
   });
+  
+  function shareSite() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'DACOOR - Reparaciones y Embobinados',
+        url: 'https://embobinadosdacoor.netlify.app/'
+      });
+    } else {
+      navigator.clipboard.writeText('https://embobinadosdacoor.netlify.app/');
+      alert('¡Link copiado! Comparte con tus contactos.');
+    }
+  }
 </script>
 
 </body>
