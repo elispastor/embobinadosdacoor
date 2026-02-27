@@ -30,7 +30,6 @@
     
     .hamburguesa { display: none; font-size: 2rem; color: white; background: none; border: none; }
     
-    /* HERO - FACHADA1 CENTRADA Y MÁS GRANDE */
     .hero {
       max-width: 1200px; margin: 2rem auto; background: white; border-radius: 30px;
       overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 3px solid var(--cobre);
@@ -38,9 +37,9 @@
     }
     
     .hero-imagen {
-      min-height: 400px;  /* Más alto */
+      min-height: 400px;
       background-image: url('FACHADA1.jpg');
-      background-size: 90%;  /* Más grande, centrada */
+      background-size: 90%;
       background-position: center;
       background-repeat: no-repeat;
       background-color: var(--fondo);
@@ -67,28 +66,21 @@
     .seccion-titulo { font-size: 2.2rem; color: var(--azul); text-align: center; margin-bottom: 2rem; }
     .seccion-titulo::after { content: ""; display: block; width: 80px; height: 3px; background: var(--cobre); margin: 0.5rem auto; }
     
-    /* EMBOBINADO - FACHADA2 CENTRADA */
-    .embobinado-especial {
-      background: linear-gradient(135deg, var(--azul), #0f3a6b);
-      color: white; padding: 3rem; border-radius: 40px; margin: 3rem 0;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
+    .embobinado-real {
+      text-align: center; margin: 3rem 0; padding: 2rem;
     }
-    .embobinado-especial img {
-      width: 100%; max-width: 400px; border-radius: 30px; border: 5px solid var(--cobre); 
-      box-shadow: 0 20px 30px rgba(0,0,0,0.3); margin: 0 auto;  /* CENTRADO */
+    .embobinado-real img {
+      max-width: 500px; width: 100%; border-radius: 20px; border: 5px solid var(--cobre); 
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
     
-    .embobinado-texto h3 { font-size: 2.5rem; color: var(--cobre); margin-bottom: 1.5rem; }
-    .embobinado-texto p { font-size: 1.2rem; margin-bottom: 1rem; }
-    .embobinado-texto ul { list-style: none; }
-    .embobinado-texto li { margin: 1rem 0; font-size: 1.1rem; padding-left: 2rem; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23b87333"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') left center no-repeat; }
+    .tarjeta-section {
+      background: linear-gradient(135deg, var(--azul), #0f3a6b); color: white; 
+      text-align: center; padding: 3rem; border-radius: 30px; margin: 3rem 0;
+    }
     
-    /* Misión Visión Valores */
     .mision-vision { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
     .mision-vision .card { text-align: center; padding: 2rem; }
-    
-    .qr-code { text-align: center; margin: 2rem 0; }
-    .qr-code img { max-width: 200px; border: 4px solid var(--cobre); border-radius: 15px; }
     
     .servicios-con-imagen {
       display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
@@ -124,7 +116,7 @@
     footer .derechos { margin-top: 1rem; font-size: 0.9rem; opacity: 0.9; }
     
     @media (max-width: 768px) {
-      .hero, .embobinado-especial, .servicios-con-imagen, .grid-2 { grid-template-columns: 1fr; }
+      .hero, .servicios-con-imagen, .grid-2 { grid-template-columns: 1fr; }
       .hamburguesa { display: block; }
       .menu { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--azul); flex-direction: column; align-items: center; padding: 1rem 0; }
       .menu.mostrar { display: flex; }
@@ -141,8 +133,9 @@
     <button class="hamburguesa" id="menuBtn">☰</button>
     <ul class="menu" id="menu">
       <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#embobinado">Embobinados</a></li>
+      <li><a href="#embobinado">Embobinado</a></li>
       <li><a href="#mision">Nosotros</a></li>
+      <li><a href="#tarjeta">Tarjeta</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#marcas">Marcas</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -174,48 +167,44 @@
 </main>
 
 <section id="embobinado" class="seccion">
-  <div class="embobinado-especial">
-    <img src="FACHADA2.jpg" alt="Embobinado DACOOR">
-    <div class="embobinado-texto">
-      <h3>⚡ Expertos en Embobinados</h3>
-      <p>Más de 15 años de experiencia en reparación y mantenimiento de motores eléctricos, transformadores y bobinas.</p>
-      <ul>
-        <li><strong>Motores monofásicos y trifásicos</strong></li>
-        <li><strong>Transformadores de potencia</strong></li>
-        <li><strong>Bobinas para electrodomésticos</strong></li>
-        <li><strong>Diagnóstico sin compromiso</strong></li>
-      </ul>
-    </div>
+  <h2 class="seccion-titulo">⚡ EMBOBINADO PROFESIONAL</h2>
+  <div class="embobinado-real">
+    <img src="embobinado.jpg" alt="Embobinado profesional DACOOR">
+    <p style="font-size: 1.3rem; color: var(--azul); margin-top: 1rem; font-weight: bold;">
+      Trabajo fino · Cobre puro · Garantía total
+    </p>
   </div>
 </section>
 
 <section id="mision" class="seccion">
-  <h2 class="seccion-titulo">🏛️ MISIÓN · VISIÓN · VALORES</h2>
+  <h2 class="seccion-titulo">🏛️ NOSOTROS</h2>
   <div class="mision-vision">
     <div class="card">
       <h3>🎯 MISIÓN</h3>
-      <p>Brindar reparaciones de calidad con amor y responsabilidad, devolviendo vida a sus electrodomésticos.</p>
+      <p>Brindar reparaciones de calidad con amor y responsabilidad.</p>
     </div>
     <div class="card">
       <h3>🔮 VISIÓN</h3>
-      <p>Ser la referencia #1 en embobinados y reparaciones en Cúcuta y Norte de Santander.</p>
+      <p>Ser #1 en embobinados en Cúcuta y Norte de Santander.</p>
     </div>
     <div class="card">
       <h3>❤️ VALORES</h3>
-      <p>Amor · Calidad · Puntualidad · Garantía · Confianza</p>
+      <p>Amor · Calidad · Puntualidad · Garantía</p>
     </div>
   </div>
 </section>
 
 <section id="tarjeta" class="seccion">
   <h2 class="seccion-titulo">💳 TARJETA DIGITAL DACOOR</h2>
-  <div class="qr-code">
-    <p><strong>Escanea y guarda en tu celular</strong></p>
-    <!-- AQUÍ VA TU QR cuando lo tengas -->
-    <div style="background: #f0f0f0; padding: 2rem; border-radius: 20px; margin: 1rem 0;">
-      <p>📱 QR Listo para WhatsApp</p>
-      <a href="https://wa.me/573212774577?text=Quiero%20mi%20tarjeta%20digital%20DACOOR" class="btn-wsp" style="display: block; max-width: 300px; margin: 1rem auto;">Generar QR</a>
-    </div>
+  <div class="tarjeta-section">
+    <h3 style="color: var(--cobre);">📱 ¡GRATIS para DACOOR!</h3>
+    <p><strong>Pide tu tarjeta digital ahora:</strong></p>
+    <a href="https://wa.me/573212774577?text=Hola%20DACOOR,%20quiero%20mi%20tarjeta%20digital%20GRATIS" 
+       class="btn-wsp" 
+       style="display: block; max-width: 350px; margin: 2rem auto 1rem; font-size: 1.3rem; padding: 1.2rem;">
+      🚀 PEDIR MI TARJETA YA
+    </a>
+    <p style="opacity: 0.9;">WhatsApp · Instagram · Facebook</p>
   </div>
 </section>
 
@@ -234,10 +223,10 @@
 </section>
 
 <section id="marcas" class="seccion">
-  <h2 class="seccion-titulo">🏷️ TRABAJAMOS CON ESTAS MARCAS</h2>
+  <h2 class="seccion-titulo">🏷️ MARCAS</h2>
   <div class="marcas-unica">
     <img src="marcas.png" alt="Marcas">
-    <p>LG · Samsung · Whirlpool · Mabe · Centrales · Haceb · Challenger</p>
+    <p>LG · Samsung · Whirlpool · Mabe · Haceb · Challenger</p>
   </div>
 </section>
 
