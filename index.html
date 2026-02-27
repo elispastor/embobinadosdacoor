@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:url" content="https://elispastor.github.io/embobinadosdacoor">
+  <meta property="og:url" content="https://embobinadosdacoor.netlify.app/">
   <meta property="og:image" content="FACHADA1.jpg">
-  <title>DACOOR · Reparaciones y Embobinados</title>
+  <title>DACOOR · Reparaciones y Embobinados ⚡</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
     :root { --azul: #1a4b8c; --cobre: #b87333; --gris: #4a5b6e; --fondo: #f5f7fa; }
@@ -30,98 +30,76 @@
     
     .hamburguesa { display: none; font-size: 2rem; color: white; background: none; border: none; }
     
+    /* HERO ⚡ CON RAYO */
     .hero {
       max-width: 1200px; margin: 2rem auto; background: white; border-radius: 30px;
-      overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 3px solid var(--cobre);
-      display: grid; grid-template-columns: 1fr 1fr;
+      overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); border: 3px solid var(--cobre);
+      display: grid; grid-template-columns: 1fr 1fr; position: relative;
+    }
+    
+    .hero::before {
+      content: "⚡"; position: absolute; top: 20px; right: 20px; font-size: 4rem; 
+      color: var(--cobre); opacity: 0.3; z-index: 1;
     }
     
     .hero-imagen {
-      min-height: 400px;
-      background-image: url('FACHADA1.jpg');
-      background-size: 90%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: var(--fondo);
+      height: 450px; position: relative; background: #f8f9ff;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-imagen img {
+      max-width: 95%; max-height: 95%; object-fit: contain; 
+      border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
     
-    .hero-content { padding: 2.5rem; }
-    .hero-content h1 { font-size: 3.5rem; color: var(--azul); line-height: 1; }
-    .hero-content h1 small { display: block; font-size: 1.8rem; color: var(--cobre); letter-spacing: 2px; }
-    .eslogan { font-size: 1.6rem; color: var(--gris); border-left: 6px solid var(--cobre); padding-left: 1.5rem; margin: 1.5rem 0; }
+    .hero-content { padding: 3rem; position: relative; z-index: 2; }
+    .hero-content h1 { font-size: 3.8rem; color: var(--azul); line-height: 1.1; }
+    .hero-content h1 small { display: block; font-size: 2rem; color: var(--cobre); }
+    .eslogan { font-size: 1.8rem; color: var(--gris); border-left: 6px solid var(--cobre); padding-left: 2rem; margin: 2rem 0; }
     
-    .direccion { background: #f0f3f8; padding: 1.5rem; border-radius: 15px; margin: 1.5rem 0; }
-    
-    .botones-contacto { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
-    .btn-wsp, .btn-llamada, .btn-tarjeta, .btn-compartir {
-      padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600;
-      display: inline-flex; align-items: center; gap: 0.5rem; border: 2px solid white;
-    }
-    .btn-wsp { background: #25D366; color: white; }
+    .botones-contacto { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+    .btn { padding: 1.2rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem;
+      display: inline-flex; align-items: center; gap: 0.7rem; border: 3px solid; transition: all 0.3s; }
+    .btn-wsp { background: #25D366; color: white; border-color: #25D366; }
     .btn-llamada { background: var(--azul); color: white; border-color: var(--cobre); }
-    .btn-tarjeta { background: var(--cobre); color: white; border-color: white; }
-    .btn-compartir { background: #ff6b35; color: white; border-color: white; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
     
-    .seccion { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; }
-    .seccion-titulo { font-size: 2.2rem; color: var(--azul); text-align: center; margin-bottom: 2rem; }
-    .seccion-titulo::after { content: ""; display: block; width: 80px; height: 3px; background: var(--cobre); margin: 0.5rem auto; }
+    .seccion { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+    .seccion-titulo { font-size: 2.5rem; color: var(--azul); text-align: center; margin-bottom: 3rem; position: relative; }
+    .seccion-titulo::after { content: ""; display: block; width: 100px; height: 4px; background: var(--cobre); margin: 1rem auto 0; }
     
-    .embobinado-real {
-      text-align: center; margin: 3rem 0; padding: 2rem;
+    /* EMBOBINADO VENTILADOR */
+    .embobinado-ventilador {
+      background: linear-gradient(135deg, var(--azul), #0f3a6b); 
+      color: white; padding: 4rem 3rem; border-radius: 40px; text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
-    .embobinado-real img {
-      max-width: 500px; width: 100%; border-radius: 20px; border: 5px solid var(--cobre); 
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-    
-    .tarjeta-section {
-      background: linear-gradient(135deg, var(--azul), #0f3a6b); color: white; 
-      text-align: center; padding: 3rem; border-radius: 30px; margin: 3rem 0;
+    .embobinado-ventilador img {
+      max-width: 400px; width: 100%; height: auto; border-radius: 25px; 
+      border: 6px solid var(--cobre); box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      margin-bottom: 2rem;
     }
     
-    .mision-vision { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .mision-vision .card { text-align: center; padding: 2rem; }
+    /* TARRJETA SUTIL - SOLO EN HERO */
+    .card { background: white; padding: 2.5rem; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-bottom: 5px solid var(--cobre); }
     
-    .servicios-con-imagen {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
-    }
-    .servicios-lista { display: flex; flex-direction: column; gap: 1.5rem; }
-    .herramientas-imagen img {
-      width: 100%; border-radius: 20px; border: 4px solid var(--cobre);
-    }
+    .mision-vision { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin: 3rem 0; }
     
-    .card {
-      background: white; padding: 1.8rem; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      border-bottom: 4px solid var(--cobre);
-    }
-    .card h3 { color: var(--azul); font-size: 1.6rem; margin-bottom: 1rem; }
+    .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
     
-    .marcas-unica {
-      background: white; padding: 3rem; border-radius: 40px; text-align: center;
-      border: 4px solid var(--cobre); margin: 2rem 0;
-    }
-    .marcas-unica img {
-      max-width: 100%; max-height: 300px; border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    .marcas-unica p { margin-top: 2rem; font-size: 1.3rem; color: var(--azul); font-weight: bold; }
+    .marcas { text-align: center; padding: 4rem 3rem; background: white; border-radius: 40px; border: 5px solid var(--cobre); }
+    .marcas img { max-width: 100%; max-height: 250px; border-radius: 20px; }
     
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
     
-    footer {
-      background: var(--azul); color: white; text-align: center; padding: 2.5rem; margin-top: 3rem;
-      border-top: 4px solid var(--cobre);
-    }
-    footer .refran { font-size: 1.6rem; color: var(--cobre); margin: 1rem 0; }
-    footer .derechos { margin-top: 1rem; font-size: 0.9rem; opacity: 0.9; }
+    footer { background: var(--azul); color: white; text-align: center; padding: 3rem; margin-top: 5rem; border-top: 5px solid var(--cobre); }
     
     @media (max-width: 768px) {
-      .hero, .servicios-con-imagen, .grid-2 { grid-template-columns: 1fr; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-imagen { height: 350px; }
+      .hero-content h1 { font-size: 2.8rem; }
       .hamburguesa { display: block; }
-      .menu { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--azul); flex-direction: column; align-items: center; padding: 1rem 0; }
+      .menu { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--azul); flex-direction: column; padding: 2rem 0; }
       .menu.mostrar { display: flex; }
-      .hero-content h1 { font-size: 2.5rem; }
-      .hero-imagen { min-height: 300px; }
     }
   </style>
 </head>
@@ -134,99 +112,59 @@
     <ul class="menu" id="menu">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#embobinado">Embobinado</a></li>
-      <li><a href="#mision">Nosotros</a></li>
-      <li><a href="#tarjeta">Tarjeta</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#marcas">Marcas</a></li>
       <li><a href="#contacto">Contacto</a></li>
+      <li><a href="https://wa.me/573212774577?text=Quiero%20mi%20tarjeta%20digital%20DACOOR" target="_blank">💳 Tarjeta</a></li>
     </ul>
   </div>
 </header>
 
 <main id="inicio">
   <section class="hero">
-    <div class="hero-imagen"></div>
+    <div class="hero-imagen">
+      <img src="FACHADA1.jpg" alt="DACOOR Fachada" loading="lazy">
+    </div>
     <div class="hero-content">
-      <h1>DA<span>COOR</span> <small>reparaciones & embobinados</small></h1>
-      <div class="eslogan">BIENVENIDOS A NUESTRO SITIO</div>
+      <h1>DA<span>COOR</span> <small>⚡ reparaciones & embobinados</small></h1>
+      <div class="eslogan">"Servicio con Amor"</div>
       
-      <div class="direccion">
-        <p><strong>📍 Avenida 8 N° 7-55</strong></p>
-        <p>Barrio El Llano · Cúcuta · N. de Santander</p>
-      </div>
-
       <div class="botones-contacto">
-        <a href="https://wa.me/573212774577" class="btn-wsp" target="_blank">📱 321 277 4577</a>
-        <a href="https://wa.me/573209399023" class="btn-wsp" target="_blank">📱 320 939 9023</a>
-        <a href="tel:+573212774577" class="btn-llamada">📞 Llamar</a>
-        <a href="#tarjeta" class="btn-tarjeta">💳 Quiero mi Tarjeta</a>
-        <a href="#" onclick="shareSite()" class="btn-compartir">📲 Compartir</a>
+        <a href="https://wa.me/573212774577" class="btn btn-wsp" target="_blank">📱 321 277 4577</a>
+        <a href="https://wa.me/573209399023" class="btn btn-wsp" target="_blank">📱 320 939 9023</a>
+        <a href="tel:+573212774577" class="btn btn-llamada">📞 Llamar Ahora</a>
       </div>
     </div>
   </section>
 </main>
 
 <section id="embobinado" class="seccion">
-  <h2 class="seccion-titulo">⚡ EMBOBINADO PROFESIONAL</h2>
-  <div class="embobinado-real">
-    <img src="embobinado.jpg" alt="Embobinado profesional DACOOR">
-    <p style="font-size: 1.3rem; color: var(--azul); margin-top: 1rem; font-weight: bold;">
-      Trabajo fino · Cobre puro · Garantía total
+  <div class="embobinado-ventilador">
+    <img src="ventilador-embobinado.jpg" alt="Embobinado ventilador DACOOR" loading="lazy">
+    <h2 style="color: var(--cobre); font-size: 2.8rem; margin-bottom: 1.5rem;">Embobinado de Precisión</h2>
+    <p style="font-size: 1.4rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+      <strong>Cobre puro · Trabajo fino · Garantía total</strong><br>
+      Motores monofásicos y trifásicos · Transformadores · Electrodomésticos
     </p>
   </div>
 </section>
 
-<section id="mision" class="seccion">
-  <h2 class="seccion-titulo">🏛️ NOSOTROS</h2>
-  <div class="mision-vision">
-    <div class="card">
-      <h3>🎯 MISIÓN</h3>
-      <p>Brindar reparaciones de calidad con amor y responsabilidad.</p>
-    </div>
-    <div class="card">
-      <h3>🔮 VISIÓN</h3>
-      <p>Ser #1 en embobinados en Cúcuta y Norte de Santander.</p>
-    </div>
-    <div class="card">
-      <h3>❤️ VALORES</h3>
-      <p>Amor · Calidad · Puntualidad · Garantía</p>
-    </div>
-  </div>
-</section>
-
-<section id="tarjeta" class="seccion">
-  <h2 class="seccion-titulo">💳 TARJETA DIGITAL DACOOR</h2>
-  <div class="tarjeta-section">
-    <h3 style="color: var(--cobre);">📱 ¡GRATIS para DACOOR!</h3>
-    <p><strong>Pide tu tarjeta digital ahora:</strong></p>
-    <a href="https://wa.me/573212774577?text=Hola%20DACOOR,%20quiero%20mi%20tarjeta%20digital%20GRATIS" 
-       class="btn-wsp" 
-       style="display: block; max-width: 350px; margin: 2rem auto 1rem; font-size: 1.3rem; padding: 1.2rem;">
-      🚀 PEDIR MI TARJETA YA
-    </a>
-    <p style="opacity: 0.9;">WhatsApp · Instagram · Facebook</p>
-  </div>
-</section>
-
 <section id="servicios" class="seccion">
-  <h2 class="seccion-titulo">🔧 NUESTROS SERVICIOS</h2>
-  <div class="servicios-con-imagen">
-    <div class="servicios-lista">
-      <div class="card"><h3>⚡ Embobinados</h3><p>Motores, transformadores y bobinas.</p></div>
-      <div class="card"><h3>🔌 Reparaciones</h3><p>Lavadoras, neveras, aires, ventiladores.</p></div>
-      <div class="card"><h3>🛠️ Mantenimiento</h3><p>Preventivo y correctivo a domicilio.</p></div>
-    </div>
-    <div class="herramientas-imagen">
-      <img src="herramientas.jpg" alt="Herramientas">
-    </div>
+  <h2 class="seccion-titulo">🔧 SERVICIOS</h2>
+  <div class="servicios-grid">
+    <div class="card"><h3>⚡ Embobinados</h3><p>Motores · Transformadores · Bobinas</p></div>
+    <div class="card"><h3>🔌 Reparaciones</h3><p>Lavadoras · Neveras · Aires · Ventiladores</p></div>
+    <div class="card"><h3>🛠️ Mantenimiento</h3><p>Preventivo y correctivo · A domicilio</p></div>
   </div>
 </section>
 
 <section id="marcas" class="seccion">
   <h2 class="seccion-titulo">🏷️ MARCAS</h2>
-  <div class="marcas-unica">
-    <img src="marcas.png" alt="Marcas">
-    <p>LG · Samsung · Whirlpool · Mabe · Haceb · Challenger</p>
+  <div class="marcas">
+    <img src="marcas.png" alt="Marcas DACOOR" loading="lazy">
+    <p style="font-size: 1.4rem; color: var(--azul); font-weight: bold; margin-top: 2rem;">
+      LG · Samsung · Whirlpool · Mabe · Haceb · Challenger
+    </p>
   </div>
 </section>
 
@@ -236,39 +174,26 @@
     <div class="card">
       <h3>📱 321 277 4577</h3>
       <p>Atención inmediata</p>
-      <a href="https://wa.me/573212774577" class="btn-wsp">WhatsApp</a>
+      <a href="https://wa.me/573212774577" class="btn btn-wsp">WhatsApp</a>
     </div>
     <div class="card">
       <h3>📱 320 939 9023</h3>
       <p>Horario comercial</p>
-      <a href="https://wa.me/573209399023" class="btn-wsp">WhatsApp</a>
+      <a href="https://wa.me/573209399023" class="btn btn-wsp">WhatsApp</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="refran">"Servicio con Amor" ❤️</div>
+  <div style="font-size: 2rem; color: var(--cobre); margin-bottom: 1.5rem;">"Servicio con Amor" ❤️</div>
   <p>DACOOR · Av. 8 N° 7-55, El Llano · Cúcuta</p>
-  <p>📱 321 277 4577 · 320 939 9023</p>
-  <div class="derechos">© 2026 DACOOR · Todos los derechos reservados</div>
+  <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 1rem;">© 2026 DACOOR · Todos los derechos reservados</div>
 </footer>
 
 <script>
   document.getElementById('menuBtn').addEventListener('click', () => {
     document.getElementById('menu').classList.toggle('mostrar');
   });
-  
-  function shareSite() {
-    if (navigator.share) {
-      navigator.share({
-        title: 'DACOOR - Reparaciones y Embobinados',
-        url: 'https://embobinadosdacoor.netlify.app/'
-      });
-    } else {
-      navigator.clipboard.writeText('https://embobinadosdacoor.netlify.app/');
-      alert('¡Link copiado! Comparte con tus contactos.');
-    }
-  }
 </script>
 
 </body>
